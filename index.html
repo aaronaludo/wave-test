@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        path{
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+        }
+        .active{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" id="demo" class="wave2" fill-opacity="1" d="M0,192L1440,128L1440,320L0,320Z"></path></svg>
+    <button id="random_button">Random</button>
+    <input type="range" id="points" min="1" max="39" step="1" value="1">
+    <div>
+        <button id="wave1" class="active">Wave 1</button>
+        <button id="wave2">Wave 2</button>   
+    </div>
+    <script>
+        function newAttribute(x){
+            const a = [];
+            const number = 1440 / x;
+            const random = Math.floor(Math.random() * 10) * 32;
+            a.push(`M0`);
+            a.push(`${random}L0`)
+            for (let i = 0; i < x; i++) {
+                const random1 = Math.floor(Math.random() * 10) * 32;
+                a.push(random1+'L'+((i + 1) * number));
+                a.push(random1+'L'+((i + 1) * number));
+            }
+            for (let i = 1; i < x; i++) {
+                if(x > 1){
+                    a.push('360L' + number * i);
+                    a.push('360L' + number * i);
+                }
+            }
+            a.push(`320L0`)
+            a.push(`320L0`)
+            a.push(`320Z`)
+            document.getElementById('demo').setAttribute('d', a);
+        }
+
+        function newAttribute1(x){
+            const a = [];
+            const number = 1440 / x;
+            const random = Math.floor(Math.random() * 10) * 32;
+            a.push(`M0`);
+            for (let i = 0; i < x; i++) {
+                const random1 = Math.floor(Math.random() * 10) * 32;
+                a.push(random1+'L'+((i + 1) * number));
+            }
+            a.push(`${random}L1440`);
+            for (let i = 1; i < x; i++) {
+                if(x > 1){
+                    a.push('360L' + number * i);
+                }
+            }
+            a.push(`320L0`)
+            a.push(`320Z`)
+            document.getElementById('demo').setAttribute('d', a);
+        }
+
+        document.getElementById('random_button').addEventListener("click", function(){
+            const range = document.getElementById('points').value;
+            if(document.getElementById('wave1').getAttribute('class') === 'active'){
+                newAttribute(range);
+            }else{
+                newAttribute1(range);
+            }
+        });
+        
+        document.getElementById('points').addEventListener('input', function(){
+            const newValue = document.getElementById('points').value;
+            if(document.getElementById('wave1').getAttribute('class') === 'active'){
+                newAttribute(newValue);
+            }else{
+                newAttribute1(newValue);
+            }
+        });
+
+        document.getElementById('wave1').addEventListener('click', function(){
+            if(document.getElementById('demo').getAttribute('class') === 'wave2'){
+                document.getElementById('demo').classList.remove('wave2');
+                document.getElementById('demo').classList.add('wave1');
+            }
+            if(document.getElementById('wave2').getAttribute('class') === 'active'){
+                document.getElementById('wave2').classList.remove('active');
+                document.getElementById('wave1').classList.add('active');
+                document.getElementById('random_button').click();
+            }
+        });
+
+        document.getElementById('wave2').addEventListener('click', function(){
+            if(document.getElementById('demo').getAttribute('class') === 'wave1'){
+                document.getElementById('demo').classList.remove('wave1');
+                document.getElementById('demo').classList.add('wave2');
+            }
+            if(document.getElementById('wave1').getAttribute('class') === 'active'){
+                document.getElementById('wave1').classList.remove('active');
+                document.getElementById('wave2').classList.add('active');
+                document.getElementById('random_button').click();
+            }
+        });
+    </script>
+</body>
+</html>
