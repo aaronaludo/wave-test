@@ -87,3 +87,8 @@ document.getElementById('color').addEventListener('input', function(){
     newValue = document.getElementById('color').value;
     document.getElementById('demo').setAttribute('fill', newValue);
 });
+
+document.getElementById('number').addEventListener('input', function(){
+    newValue = document.getElementById('number').value;
+    document.getElementById('demo').setAttribute('fill-opacity', newValue);
+});
