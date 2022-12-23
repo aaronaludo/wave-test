@@ -82,3 +82,8 @@ document.getElementById('wave2').addEventListener('click', function(){
         document.getElementById('random_button').click();
     }
 });
+
+document.getElementById('color').addEventListener('input', function(){
+    newValue = document.getElementById('color').value;
+    document.getElementById('demo').setAttribute('fill', newValue);
+});
