@@ -173,9 +173,7 @@ function newAttribute2(x){
                 }
             }
         }
-        // console.log(a);
         document.getElementById('demo').setAttribute('d', a);
-        console.log(x);
     }else{
         newAttribute1('1');
     }
@@ -195,83 +193,6 @@ document.getElementById('random_button').addEventListener("click", function(){
     }else{
         newAttribute2(range);
     }
-    // function randomIntFromInterval(min, max) {
-    //     return Math.floor(Math.random() * (max - min + 1) + min)
-    // }
-  
-    // if(random === 0){
-    //     randomRandom = Math.floor(Math.random() * 160);
-    // }else if(random === 32){
-    //     // randomRandom = Math.floor(Math.random() * 176);
-    //     randomRandom = randomIntFromInterval(16, 176);
-    // }else if(random === 64){
-    //     // randomRandom = Math.floor(Math.random() * 192);
-    //     randomRandom = randomIntFromInterval(32, 192);
-    // }else if(random === 96){
-    //     // randomRandom = Math.floor(Math.random() * 208);
-    //     randomRandom = randomIntFromInterval(48, 208);
-    // }else if(random === 128){
-    //     // randomRandom = Math.floor(Math.random() * 224);
-    //     randomRandom = randomIntFromInterval(64, 224);
-    // }else if(random === 160){
-    //     // randomRandom = Math.floor(Math.random() * 240);
-    //     randomRandom = randomIntFromInterval(80, 240);
-    // }else if(random === 192){
-    //     // randomRandom = Math.floor(Math.random() * 256);
-    //     randomRandom = randomIntFromInterval(96, 256);
-    // }else if(random === 224){
-    //     // randomRandom = Math.floor(Math.random() * 272);
-    //     randomRandom = randomIntFromInterval(112, 272);
-    // }else if(random === 256){
-    //     // randomRandom = Math.floor(Math.random() * 288);
-    //     randomRandom = randomIntFromInterval(128, 288);
-    // }else if(random === 288){
-    //     // randomRandom = Math.floor(Math.random() * 304);
-    //     randomRandom = randomIntFromInterval(144, 304);
-    // }else{
-    //     randomRandom = randomIntFromInterval(160, 320);
-    // }
-    // if(random1 === 0){
-    //     random1Random = Math.floor(Math.random() * 160);
-    // }else if(random1 === 32){
-    //     random1Random = randomIntFromInterval(16, 176);
-    // }else if(random1 === 64){
-    //     random1Random = randomIntFromInterval(32, 192);
-    // }else if(random1 === 96){
-    //     random1Random = randomIntFromInterval(48, 208);
-    // }else if(random1 === 128){
-    //     random1Random = randomIntFromInterval(64, 224);
-    // }else if(random1 === 160){
-    //     random1Random = randomIntFromInterval(80, 240);
-    // }else if(random1 === 192){
-    //     random1Random = randomIntFromInterval(96, 256);
-    // }else if(random1 === 224){
-    //     random1Random = randomIntFromInterval(112, 272);
-    // }else if(random1 === 256){
-    //     random1Random = randomIntFromInterval(128, 288);
-    // }else if(random1 === 288){
-    //     random1Random = randomIntFromInterval(144, 304);
-    // }else{
-    //     random1Random = randomIntFromInterval(160, 320);
-    // }
-    // // M0,32L120,57C240,82,480,132,720,206C960,280,1200,186,1320,139L1440,92L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z
-    // // console.log(random + ' ' + randomRandom);
-    // // console.log(random1 + ' ' + random1Random);
-    // const random2 = random < randomRandom ? ((randomRandom - random) / 2) + random : ((random - randomRandom) / 2) + randomRandom;
-    // const random3 = random < randomRandom ? (randomRandom - random) + randomRandom : randomRandom - (random - randomRandom);
-    // const random4 = random1 < random1Random ? (random1Random - random1) + random1Random : random1Random - (random1 - random1Random);
-    // const random5 = random1 < random1Random ? ((random1Random - random1) / 2) + random1 : ((random1 - random1Random) / 2) + random1Random;
-    // const random6 = random3 < random4 ? ((random4 - random3) / 2) + random3 : ((random3 - random4) / 2) + random4;
-
-    // const test = `M0,${random}L120,${random2}C240,${randomRandom},480,${random3},720,${random6}C960,${random4},1200,${random1Random},1320,${random5}L1440,${random1}L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z`;
-    // // console.log(test);
-    // document.getElementById('demo').setAttribute('d', test);
-
-    // if(document.getElementById('wave1').getAttribute('class') === 'active'){
-    //     newAttribute(range);
-    // }else{
-    //     newAttribute1(range);
-    // }
 
 });
 
