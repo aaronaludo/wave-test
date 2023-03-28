@@ -19,6 +19,10 @@ function newAttribute(x){
     a.push(`320L0`)
     a.push(`320Z`)
     document.getElementById('demo').setAttribute('d', a);
+
+    const path1 = `path fill="#0099ff" id="demo" class="wave2" fill-opacity="1" d="${a}"`;
+    document.getElementById('code2').innerHTML = path1;
+
 }
 
 function newAttribute1(x){
@@ -39,6 +43,9 @@ function newAttribute1(x){
     a.push(`320L0`)
     a.push(`320Z`)
     document.getElementById('demo').setAttribute('d', a);
+
+    const path1 = `path fill="#0099ff" id="demo" class="wave2" fill-opacity="1" d="${a}"`;
+    document.getElementById('code2').innerHTML = path1;
 }
 
 
@@ -174,10 +181,17 @@ function newAttribute2(x){
             }
         }
         document.getElementById('demo').setAttribute('d', a);
+
+        const path1 = `path fill="#0099ff" id="demo" class="wave2" fill-opacity="1" d="${a}"`;
+        document.getElementById('code2').innerHTML = path1;
+        
     }else{
         newAttribute1('1');
     }
 }
+
+
+
 
 document.getElementById('random_button').addEventListener("click", function(){
     const range = document.getElementById('points').value;
@@ -186,9 +200,9 @@ document.getElementById('random_button').addEventListener("click", function(){
     let randomRandom = null;
     let random1Random = null;
 
-    if(document.getElementById('wave1').getAttribute('class') === 'active'){
+    if(document.getElementById('wave1').getAttribute('class') === 'active-wave'){
         newAttribute(range);
-    }else if(document.getElementById('wave2').getAttribute('class') === 'active'){
+    }else if(document.getElementById('wave2').getAttribute('class') === 'active-wave'){
         newAttribute1(range);
     }else{
         newAttribute2(range);
@@ -198,9 +212,9 @@ document.getElementById('random_button').addEventListener("click", function(){
 
 document.getElementById('points').addEventListener('input', function(){
     const newValue = document.getElementById('points').value;   
-    if(document.getElementById('wave1').getAttribute('class') === 'active'){
+    if(document.getElementById('wave1').getAttribute('class') === 'active-wave'){
         newAttribute(newValue);
-    }else if(document.getElementById('wave2').getAttribute('class') === 'active'){
+    }else if(document.getElementById('wave2').getAttribute('class') === 'active-wave'){
         newAttribute1(newValue);
     }else{
         newAttribute2(newValue);
@@ -216,15 +230,22 @@ document.getElementById('wave1').addEventListener('click', function(){
         document.getElementById('demo').classList.add('wave1');
     }
 
-    if(document.getElementById('wave2').getAttribute('class') === 'active'){
-        document.getElementById('wave2').classList.remove('active');
-        document.getElementById('wave1').classList.add('active');
+    if(document.getElementById('wave2').getAttribute('class') === 'active-wave'){
+        document.getElementById('wave2').classList.remove('active-wave');
+        document.getElementById('wave2').classList.add('normal-wave');
+        document.getElementById('wave1').classList.remove('normal-wave');
+        document.getElementById('wave1').classList.add('active-wave');
         document.getElementById('random_button').click();
-    }else if(document.getElementById('wave3').getAttribute('class') === 'active'){
-        document.getElementById('wave3').classList.remove('active');
-        document.getElementById('wave1').classList.add('active');
+    }else if(document.getElementById('wave3').getAttribute('class') === 'active-wave'){
+        document.getElementById('wave3').classList.remove('active-wave');
+        document.getElementById('wave3').classList.add('normal-wave');
+        document.getElementById('wave1').classList.remove('normal-wave');
+        document.getElementById('wave1').classList.add('active-wave');
         document.getElementById('random_button').click();
     }
+
+    document.getElementById('nice').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" fill-rule="nonzero" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 22L11 22 11 3 22 3 22 21.5172414"></path></svg>`;
+    document.getElementById('nice__2').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" fill-rule="nonzero" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 23L1 12.9388611 5.55130912 12.9388611 5.55130912 1 10.0447933 1 10.0447933 9.64319035 14.5085979 9.64319035 14.5085979 14.858897 18.8965816 14.858897 18.8965816 5.5443012 23 5.5443012 23 22.0552669"></path></svg>`;
 });
 
 document.getElementById('wave2').addEventListener('click', function(){
@@ -236,15 +257,23 @@ document.getElementById('wave2').addEventListener('click', function(){
         document.getElementById('demo').classList.add('wave2');
     }
 
-    if(document.getElementById('wave1').getAttribute('class') === 'active'){
-        document.getElementById('wave1').classList.remove('active');
-        document.getElementById('wave2').classList.add('active');
+    if(document.getElementById('wave1').getAttribute('class') === 'active-wave'){
+        document.getElementById('wave1').classList.remove('active-wave');
+        document.getElementById('wave1').classList.add('normal-wave');
+        document.getElementById('wave2').classList.remove('normal-wave');
+        document.getElementById('wave2').classList.add('active-wave');
         document.getElementById('random_button').click();
-    }else if(document.getElementById('wave3').getAttribute('class') === 'active'){
-        document.getElementById('wave3').classList.remove('active');
-        document.getElementById('wave2').classList.add('active');
+    }else if(document.getElementById('wave3').getAttribute('class') === 'active-wave'){
+        document.getElementById('wave3').classList.remove('active-wave');
+        document.getElementById('wave3').classList.add('normal-wave');
+        document.getElementById('wave2').classList.remove('normal-wave');
+        document.getElementById('wave2').classList.add('active-wave');
         document.getElementById('random_button').click();
     }
+
+    
+    document.getElementById('nice').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" fill-rule="evenodd" stroke="currentcolor" stroke-linecap="round" stroke-width="2" d="M5 16l14-7"></path></svg>`;
+    document.getElementById('nice__2').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" fill-rule="nonzero" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 21.3703704L4.66666667 7.51851852 8.33333333 21.3703704 12 4.25925926 15.6666667 19.7407407 19.3333333 1 23 23"></path></svg>`;
 });
 
 document.getElementById('wave3').addEventListener('click', function(){
@@ -256,22 +285,29 @@ document.getElementById('wave3').addEventListener('click', function(){
         document.getElementById('demo').classList.add('wave3');
     }
 
-    if(document.getElementById('wave1').getAttribute('class') === 'active'){
-        document.getElementById('wave1').classList.remove('active');
-        document.getElementById('wave3').classList.add('active');
+    if(document.getElementById('wave1').getAttribute('class') === 'active-wave'){
+        document.getElementById('wave1').classList.remove('active-wave');
+        document.getElementById('wave1').classList.add('normal-wave');
+        document.getElementById('wave3').classList.remove('normal-wave');
+        document.getElementById('wave3').classList.add('active-wave');
         document.getElementById('random_button').click();
-    }else if(document.getElementById('wave2').getAttribute('class') === 'active'){
-        document.getElementById('wave2').classList.remove('active');
-        document.getElementById('wave3').classList.add('active');
+    }else if(document.getElementById('wave2').getAttribute('class') === 'active-wave'){
+        document.getElementById('wave2').classList.remove('active-wave');
+        document.getElementById('wave2').classList.add('normal-wave');
+        document.getElementById('wave3').classList.remove('normal-wave');
+        document.getElementById('wave3').classList.add('active-wave');
         document.getElementById('random_button').click();
     }
-});
-document.getElementById('color').addEventListener('input', function(){
-    newValue = document.getElementById('color').value;
-    document.getElementById('demo').setAttribute('fill', newValue);
-});
 
-document.getElementById('number').addEventListener('input', function(){
-    newValue = document.getElementById('number').value;
-    document.getElementById('demo').setAttribute('fill-opacity', newValue);
+    document.getElementById('nice').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" fill-rule="nonzero" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 13.247l1.833-.876c1.834-.876 5.5-2.63 9.167-2.339 3.667.312 7.333 2.613 9.167 3.801L23 15"></path></svg>'
+    document.getElementById('nice__2').innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" fill-rule="nonzero" stroke="currentcolor" stroke-linecap="round" stroke-width="2" d="M1 13.736C2.04 11.933 3.09 5.049 4.146 5c.659.031 1.324 2.817 1.985 5.531.38 1.561.76 3.098 1.138 4.073 1.059 2.574 2.113.935 3.146-.868 1.057-1.803 2.113-3.442 3.146-3.491 1.055.049 2.114 1.688 3.146 4.36 1.052 2.573 2.09 6.178 3.147 5.244 1.05-.869 2.09-6.113 2.618-8.736L23 8.491"></path></svg>'
 });
+// document.getElementById('color').addEventListener('input', function(){
+//     newValue = document.getElementById('color').value;
+//     document.getElementById('demo').setAttribute('fill', newValue);
+// });
+
+// document.getElementById('number').addEventListener('input', function(){
+//     newValue = document.getElementById('number').value;
+//     document.getElementById('demo').setAttribute('fill-opacity', newValue);
+// });
